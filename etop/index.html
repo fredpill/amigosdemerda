@@ -17,6 +17,7 @@
         text-align: center;
         padding: 20px;
         font-size: 24px;
+text-transform: uppercase;
     }
     .card {
         margin: 20px auto;
@@ -26,6 +27,8 @@
         background-color: #F3F3F3;
         border: 2px solid #707070;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ 	border-radius: 15px;
+
     }
     .question {
         background-color: #E0E0E0;
@@ -48,15 +51,16 @@
         background-color: #E0E0E0; /* Cinza claro quando selecionado */
     }
     button {
-        display: block;
-        width: 200px;
-        margin: 20px auto;
-        padding: 10px 20px;
-        font-size: 16px;
-        color: #FFF;
-        background-color: #007BFF;
-        border: none;
-        cursor: pointer;
+display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #FFF;
+    background-color: #373839;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
     }
 </style>
 </head>
@@ -689,7 +693,173 @@ const questions = [
     { 
         "question": "Quais são os principais podcasts brasileiros sobre cultura pop?", 
         "answers": ["Mamilos", "NerdCast", "Não Ouvo", "Um Milkshake Chamado Wanda", "Popload", "Braincast", "Anticast", "Projeto Humanos"] 
-    }
+    },
+{ 
+        "question": "Quais são os maiores sucessos do axé music dos últimos anos?", 
+        "answers": ["Claudia Leitte", "Ivete Sangalo", "Daniela Mercury", "Bell Marques", "É o Tchan", "Chiclete com Banana", "Banda Eva", "Asa de Águia"] 
+    },
+    { 
+        "question": "Quais são os artistas brasileiros que ganharam Grammy Latino?", 
+        "answers": ["Gilberto Gil", "Caetano Veloso", "Maria Rita", "Ivete Sangalo", "Djavan", "Roberto Carlos", "Marisa Monte", "Anitta"] 
+    },
+    { 
+        "question": "Quais programas de variedades são mais assistidos no Brasil?", 
+        "answers": ["Encontro com Fátima Bernardes", "Programa do Jô", "Altas Horas", "The Noite com Danilo Gentili", "Programa da Maisa", "Lady Night com Tatá Werneck", "Programa Silvio Santos", "Conversa com Bial"] 
+    },
+    { 
+        "question": "Quem são os novos talentos da música sertaneja brasileira?", 
+        "answers": ["Marília Mendonça", "Gustavo Mioto", "Zé Felipe", "Lauana Prado", "Gabriel Diniz", "Jorge & Mateus", "Maiara & Maraísa", "Luan Santana"] 
+    },
+    { 
+        "question": "Quais são os melhores filmes de comédia brasileiros dos últimos anos?", 
+        "answers": ["Minha Mãe é uma Peça", "Os Parças", "Meu Passado Me Condena", "Cine Holliúdy", "O Candidato Honesto", "De Pernas Pro Ar", "A Comédia Divina", "Os Farofeiros"] 
+    },
+    { 
+        "question": "Quais são os principais ícones da televisão brasileira?", 
+        "answers": ["Silvio Santos", "Hebe Camargo", "Fausto Silva", "Xuxa Meneghel", "Ana Maria Braga", "Gugu Liberato", "Ratinho", "Luciano Huck"] 
+    },
+    { 
+        "question": "Quem são os maiores artistas do pagode brasileiro?", 
+        "answers": ["Thiaguinho", "Turma do Pagode", "Sorriso Maroto", "Raça Negra", "ExaltaSamba", "Grupo Revelação", "Fundo de Quintal", "Molejo"] 
+    },
+    { 
+        "question": "Quais são os melhores locais para shows ao vivo no Brasil?", 
+        "answers": ["Circo Voador - RJ", "Espaço das Américas - SP", "Chevrolet Hall - MG", "Arena Fonte Nova - BA", "HSBC Brasil - SP", "Bar Opinião - RS", "Credicard Hall - SP", "Maracanãzinho - RJ"] 
+    },
+    { 
+        "question": "Quais são os escritores brasileiros mais vendidos de ficção contemporânea?", 
+        "answers": ["Paulo Coelho", "Thalita Rebouças", "Carina Rissi", "Raphael Montes", "Martha Batalha", "André Vianco", "Mauricio de Sousa", "Fernando Morais"] 
+    },
+    { 
+        "question": "Quem são os maiores influencers de moda do Brasil?", 
+        "answers": ["Camila Coelho", "Bruna Marquezine", "Thássia Naves", "Sabrina Sato", "Giovanna Ewbank", "Alexandre Herchcovitch", "Alice Ferraz", "Francisco Costa"] 
+    },
+    { 
+        "question": "Quais são as maiores festas juninas do Brasil?", 
+        "answers": ["Festa de São João de Caruaru", "São João de Campina Grande", "São João de Mossoró", "Festa Junina de Votorantim", "São João de Maracanaú", "São João de Patos", "São João de Petrolina", "São João de Piritiba"] 
+    },
+    { 
+        "question": "Quais são os videoclipes brasileiros mais icônicos?", 
+        "answers": ["Amor I Love You - Marisa Monte", "Show das Poderosas - Anitta", "Velha Infância - Tribalistas", "Robocop Gay - Mamonas Assassinas", "Faroeste Caboclo - Legião Urbana", "Ainda Lembro - Marisa Monte e Nando Reis", "É Proibido Fumar - Skank", "Meninos e Meninas - Legião Urbana"] 
+    },
+    { 
+        "question": "Quais artistas brasileiros são conhecidos por suas performances ao vivo?", 
+        "answers": ["Ivete Sangalo", "Caetano Veloso", "Gilberto Gil", "Anitta", "Jorge Ben Jor", "Roberto Carlos", "Tim Maia", "Rita Lee"] 
+    },
+    { 
+        "question": "Quem são os principais artistas de Bossa Nova?", 
+        "answers": ["João Gilberto", "Tom Jobim", "Vinícius de Moraes", "Nara Leão", "Elis Regina", "Toquinho", "Chico Buarque", "Gal Costa"] 
+    },
+    { 
+        "question": "Quais programas de auditório marcaram a TV brasileira?", 
+        "answers": ["Domingão do Faustão", "Caldeirão do Huck", "Programa Silvio Santos", "Show do Milhão", "Cassino do Chacrinha", "Xuxa Park", "Programa do Ratinho", "Hebe"] 
+    },
+    { 
+        "question": "Quais são os melhores álbuns de música brasileira de todos os tempos?", 
+        "answers": ["Acabou Chorare - Novos Baianos", "Construção - Chico Buarque", "Chega de Saudade - João Gilberto", "Elis & Tom - Elis Regina e Tom Jobim", "Secos & Molhados - Secos & Molhados", "Racional - Tim Maia", "Cartola - Cartola", "A Tábua de Esmeralda - Jorge Ben Jor"] 
+    },
+    { 
+        "question": "Quais são os principais festivais de arte no Brasil?", 
+        "answers": ["Bienal de São Paulo", "Festival de Arte de Belo Horizonte", "Bienal do Livro do Rio", "Festival Internacional de Arte Contemporânea SESC_Videobrasil", "Festival de Arte de Curitiba", "Festival de Inverno de Campos do Jordão", "Mostra Internacional de Teatro de São Paulo", "Festival de Fotografia de Tiradentes"] 
+    },
+    { 
+        "question": "Quem são os ícones do teatro musical brasileiro?", 
+        "answers": ["Miguel Falabella", "Claudia Raia", "Alessandra Maestrini", "Jarbas Homem de Mello", "Mariana Elisabetsky", "Fernanda Chamma", "José Mayer", "Kiara Sasso"] 
+    },
+    { 
+        "question": "Quais são os carnavais mais famosos do Brasil fora do Rio e Salvador?", 
+        "answers": ["Carnaval de Recife", "Carnaval de Olinda", "Carnaval de Ouro Preto", "Carnaval de Diamantina", "Carnaval de São Luiz do Paraitinga", "Carnaval de João Pessoa", "Carnaval de Florianópolis", "Carnaval de Vitória"] 
+    },
+    { 
+        "question": "Quem são os pioneiros do cinema novo brasileiro?", 
+        "answers": ["Glauber Rocha", "Nelson Pereira dos Santos", "Carlos Diegues", "Joaquim Pedro de Andrade", "Ruy Guerra", "Arnaldo Jabor", "Leon Hirszman", "Walter Lima Jr."] 
+    },
+
+{ 
+        "question": "Quais são os sites mais visitados do mundo?", 
+        "answers": ["Google", "YouTube", "Facebook", "Amazon", "Wikipedia", "Yahoo", "Twitter", "Instagram"] 
+    },
+    { 
+        "question": "Quem são os criadores das principais redes sociais?", 
+        "answers": ["Mark Zuckerberg (Facebook)", "Jack Dorsey (Twitter)", "Kevin Systrom (Instagram)", "Steve Chen, Chad Hurley, Jawed Karim (YouTube)", "Reid Hoffman (LinkedIn)", "David Karp (Tumblr)", "Evan Spiegel (Snapchat)", "Ben Silbermann (Pinterest)"] 
+    },
+    { 
+        "question": "Quais são os maiores virais de internet de todos os tempos?", 
+        "answers": ["Gangnam Style", "Harlem Shake", "Nyan Cat", "Charlie Bit My Finger", "Double Rainbow", "Leave Britney Alone", "Bed Intruder Song", "The Dress (Black and Blue or White and Gold)"] 
+    },
+    { 
+        "question": "Quais são os principais browsers (navegadores) usados na internet?", 
+        "answers": ["Google Chrome", "Mozilla Firefox", "Safari", "Microsoft Edge", "Opera", "Internet Explorer", "Brave", "Vivaldi"] 
+    },
+    { 
+        "question": "Quais são os tipos de conteúdo mais populares no YouTube?", 
+        "answers": ["Vlogs", "Tutoriais", "Gameplays", "Reviews de produtos", "Músicas e videoclipes", "Filmes e animações", "Programas educacionais", "Desafios"] 
+    },
+    { 
+        "question": "Quais são as principais plataformas de streaming de música?", 
+        "answers": ["Spotify", "Apple Music", "Amazon Music", "YouTube Music", "Tidal", "Pandora", "Deezer", "SoundCloud"] 
+    },
+    { 
+        "question": "Quais são as principais tendências em web design?", 
+        "answers": ["Minimalismo", "Design responsivo", "Dark Mode", "Animações complexas", "Neumorfismo", "Parallax scrolling", "Interfaces de voz", "Realidade Aumentada"] 
+    },
+    { 
+        "question": "Quem são os blogueiros mais influentes?", 
+        "answers": ["Heather Armstrong (Dooce)", "Arianna Huffington (HuffPost)", "Rand Fishkin (Moz)", "Mark Manson", "Neil Patel", "Linda Ikeji", "Chiara Ferragni", "Gary Vaynerchuk"] 
+    },
+    { 
+        "question": "Quais são as maiores comunidades online?", 
+        "answers": ["Reddit", "Quora", "Stack Exchange", "Tumblr", "Flickr", "Nextdoor", "Wattpad", "Discord"] 
+    },
+    { 
+        "question": "Quais são os emojis mais usados?", 
+        "answers": ["Face com lágrimas de alegria", "Coração vermelho", "Rosto sorridente com olhos sorridentes", "Dois corações", "Rosto mandando beijo", "Rosto pensativo", "Palmas", "Fogo"] 
+    },
+    { 
+        "question": "Quais são os principais formatos de arquivo para imagens?", 
+        "answers": ["JPEG", "PNG", "GIF", "BMP", "SVG", "TIFF", "RAW", "WebP"] 
+    },
+    { 
+        "question": "Quais são as linguagens de programação mais populares para desenvolvimento web?", 
+        "answers": ["JavaScript", "Python", "Java", "Ruby", "PHP", "C#", "TypeScript", "Swift"] 
+    },
+    { 
+        "question": "Quais são as principais ferramentas de SEO?", 
+        "answers": ["Google Analytics", "SEMrush", "Moz", "Ahrefs", "Yoast SEO", "Majestic", "Google Search Console", "Ubersuggest"] 
+    },
+    { 
+        "question": "Quais são os maiores fóruns na internet?", 
+        "answers": ["Reddit", "4chan", "NeoGAF", "Bodybuilding.com", "Something Awful", "IGN Boards", "GameFAQs", "Nairaland"] 
+    },
+    { 
+        "question": "Quais são os principais serviços de armazenamento na nuvem?", 
+        "answers": ["Google Drive", "Dropbox", "Microsoft OneDrive", "Apple iCloud", "Amazon Drive", "Box", "Mega", "pCloud"] 
+    },
+    { 
+        "question": "Quais são as principais plataformas de e-commerce?", 
+        "answers": ["Amazon", "eBay", "Alibaba", "Etsy", "Walmart", "Rakuten", "Mercado Libre", "Taobao"] 
+    },
+    { 
+        "question": "Quais são as maiores polêmicas que aconteceram nas redes sociais?", 
+        "answers": ["Cambridge Analytica (Facebook)", "Censura e Twitter", "YouTube e demonetização", "Reddit e a revolta do r/WallStreetBets", "Instagram e os padrões de beleza", "TikTok e privacidade de dados", "WhatsApp e criptografia de ponta a ponta", "Elon Musk e Twitter"] 
+    },
+    { 
+        "question": "Quais são os tipos de ataques cibernéticos mais comuns?", 
+        "answers": ["Phishing", "Malware", "Ransomware", "DDoS (Distributed Denial of Service)", "Man in the Middle", "SQL Injection", "Cross-site Scripting (XSS)", "Zero-day Exploit"] 
+    },
+    { 
+        "question": "Quais são as melhores práticas de segurança online?", 
+        "answers": ["Usar senhas fortes", "Habilitar autenticação de dois fatores", "Atualizar software regularmente", "Usar VPN", "Evitar Wi-Fi público para transações sensíveis", "Verificar a segurança dos sites (HTTPS)", "Não compartilhar informações pessoais desnecessárias", "Usar softwares antivírus"] 
+    },
+    { 
+        "question": "Quais são os principais influenciadores digitais no mundo?", 
+        "answers": ["Kim Kardashian", "Kylie Jenner", "Cristiano Ronaldo", "Selena Gomez", "Lionel Messi", "Dwayne Johnson", "Ariana Grande", "Ellen DeGeneres"] 
+    },
+    { 
+        "question": "Quais são os maiores escândalos de privacidade na internet?", 
+        "answers": ["Facebook e Cambridge Analytica", "Yahoo e vazamento de dados", "Equifax e vazamento de informações", "Ashley Madison e o vazamento de dados dos usuários", "Sony Pictures e o hackeamento de e-mails", "LinkedIn e o roubo de senhas", "Target e o roubo de dados de cartões de crédito", "Edward Snowden e a NSA"] 
+    },
+
     // Adicione até 500 perguntas neste formato
 ];
 
