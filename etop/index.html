@@ -41,6 +41,11 @@
         padding: 10px;
         background-color: #FFF;
         border: 1px solid #DDD;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .answer.active {
+        background-color: #E0E0E0; /* Cinza claro quando selecionado */
     }
     button {
         display: block;
@@ -71,6 +76,7 @@
     </div>
 </div>
 <button onclick="newCard()">Nova Carta</button>
+
 
 <script>
 const questions = [
@@ -468,10 +474,19 @@ function newCard() {
     const answerElements = document.querySelectorAll('.answer');
     
     questionElement.textContent = selectedQuestion.question;
-    selectedQuestion.answers.forEach((answer, index) => {
-        answerElements[index].textContent = answer;
+    answerElements.forEach((answer, index) => {
+        answer.textContent = selectedQuestion.answers[index];
+        answer.classList.remove('active'); // Reset the background when new card is shown
     });
 }
+
+// Adiciona a funcionalidade de seleção para as respostas
+document.querySelector('.answers').addEventListener('click', function(event) {
+    if (event.target.classList.contains('answer')) {
+        event.target.classList.toggle('active');
+    }
+});
+
 </script>
 </body>
 </html>
