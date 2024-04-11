@@ -9,10 +9,10 @@
     height: 100%;
     margin: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
   }
   header {
     width: 100%;
@@ -22,6 +22,10 @@
     padding: 20px 0;
     font-size: 2em;
     font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
   }
   .card {
     width: 90%;
@@ -30,13 +34,22 @@
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 2px solid #e0aaff;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 80px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  .card.is-flipped {
+    transform: rotateY(180deg);
+  }
+  .number, .text {
+    backface-visibility: hidden;
   }
   .number {
     font-size: 2em;
@@ -55,6 +68,7 @@
     background-color: #007BFF;
     color: white;
     cursor: pointer;
+    margin-top: 20px;
   }
   button:hover {
     background-color: #0056b3;
@@ -66,170 +80,29 @@
 <div class="card">
   <div class="number">1</div>
   <div class="text">Pressione o botão para ver uma nova frase!</div>
-  <button onclick="newPhrase()">Mostrar a Carta</button>
 </div>
+<button onclick="newPhrase()">Mostrar a Carta</button>
 
 <script>
   const phrases = [
- { "number": 51, "text": "Quem é mais provável de ter feito sexo em um local público?" },
-    { "number": 52, "text": "Quem é mais provável de experimentar uma nova droga em uma viagem?" },
-    { "number": 53, "text": "Quem é mais provável de ter um one-night stand numa viagem?" },
-    { "number": 54, "text": "Quem é mais provável de ter participado de uma festa swinger por curiosidade?" },
-    { "number": 55, "text": "Quem é mais provável de ter mandado nudes por engano para a pessoa errada?" },
-    { "number": 56, "text": "Quem é mais provável de ter uma história de sexo que terminou no hospital?" },
-    { "number": 57, "text": "Quem é mais provável de ter experimentado drogas recreativas em um festival de música?" },
-    { "number": 58, "text": "Quem é mais provável de ter uma tatuagem relacionada a uma experiência sexual?" },
-    { "number": 59, "text": "Quem é mais provável de ter se envolvido com alguém muito mais velho?" },
-    { "number": 60, "text": "Quem é mais provável de ter sido expulso de um bar por comportamento lascivo?" },
-    { "number": 61, "text": "Quem é mais provável de ter comprado algum brinquedo sexual em uma viagem?" },
-    { "number": 62, "text": "Quem é mais provável de ter feito um striptease sob influência de álcool ou drogas?" },
-    { "number": 63, "text": "Quem é mais provável de ter perdido a roupa interior em uma festa?" },
-    { "number": 64, "text": "Quem é mais provável de ter fingido um orgasmo para terminar logo?" },
-    { "number": 65, "text": "Quem é mais provável de ter participado de uma festa rave até o amanhecer?" },
-    { "number": 66, "text": "Quem é mais provável de ter enganado alguém sobre ser virgem?" },
-    { "number": 67, "text": "Quem é mais provável de ter usado uma desculpa esfarrapada para evitar sexo?" },
-    { "number": 68, "text": "Quem é mais provável de ter uma história de amor com alguém que conheceu online?" },
-    { "number": 69, "text": "Quem é mais provável de ter sido pego comprando produtos eróticos?" },
-    { "number": 70, "text": "Quem é mais provável de ter uma bad trip em público?" },
-    { "number": 71, "text": "Quem é mais provável de tentar convencer os amigos a experimentar uma nova droga?" },
-    { "number": 72, "text": "Quem é mais provável de ter experimentado a maior variedade de substâncias ilícitas?" },
-    { "number": 73, "text": "Quem é mais provável de ter tido uma viagem de ácido em um local totalmente inapropriado?" },
-    { "number": 74, "text": "Quem é mais provável de ter usado drogas antes de um evento importante para relaxar?" },
-    { "number": 75, "text": "Quem é mais provável de ter plantado sua própria cannabis?" },
-    { "number": 76, "text": "Quem é mais provável de ter sido pego pela polícia por posse de drogas?" },
-    { "number": 77, "text": "Quem é mais provável de ter confundido sal com cocaína?" },
-    { "number": 78, "text": "Quem é mais provável de ter ido a uma consulta médica pedir uma receita para maconha medicinal?" },
-    { "number": 79, "text": "Quem é mais provável de ter ido trabalhar ainda sob o efeito de drogas?" },
-    { "number": 80, "text": "Quem é mais provável de ter vendido algo importante para comprar drogas?" },
-    { "number": 81, "text": "Quem é mais provável de ter usado drogas pensando que era outra coisa?" },
-    { "number": 82, "text": "Quem é mais provável de ter se perdido durante uma viagem de drogas?" },
-    { "number": 83, "text": "Quem é mais provável de ter misturado álcool e drogas sem saber das consequências?" },
-    { "number": 84, "text": "Quem é mais provável de ter guardado drogas em lugares estranhos para esconder?" },
-    { "number": 85, "text": "Quem é mais provável de ter tido uma experiência de quase morte com drogas?" },
-    { "number": 86, "text": "Quem é mais provável de ter inventado uma história incrível sob o efeito de drogas?" },
-    { "number": 87, "text": "Quem é mais provável de ter feito arte sob influência de substâncias?" },
-    { "number": 88, "text": "Quem é mais provável de ter convencido alguém a parar de usar drogas?" },
-    { "number": 89, "text": "Quem é mais provável de ter sido salvo por amigos durante uma bad trip?" },
-    { "number": 90, "text": "Quem é mais provável de ter usado drogas em locais proibidos?" },
-    { "number": 91, "text": "Quem é mais provável de ser pego cantando no chuveiro?" },
-    { "number": 92, "text": "Quem é mais provável de perder a paciência rapidamente?" },
-    { "number": 93, "text": "Quem é mais provável de ser um espião disfarçado?" },
-    { "number": 94, "text": "Quem é mais provável de ter um animal exótico como pet?" },
-    { "number": 95, "text": "Quem é mais provável de fazer uma tatuagem e se arrepender?" },
-    { "number": 96, "text": "Quem é mais provável de se tornar um meme viral?" },
-    { "number": 97, "text": "Quem é mais provável de esquecer de usar filtro solar no verão?" },
-    { "number": 98, "text": "Quem é mais provável de falar durante um filme no cinema?" },
-    { "number": 99, "text": "Quem é mais provável de ter um guarda-roupa desorganizado?" },
-    { "number": 100, "text": "Quem é mais provável de se perder andando pela própria cidade?" },
-{ "number": 1, "text": "Quem é mais provável de esquecer onde deixou as chaves?" },
-    { "number": 2, "text": "Quem gastaria todo o salário em uma única ida ao shopping?" },
-    { "number": 3, "text": "Quem sempre diz que vai e nunca aparece?" },
-    { "number": 4, "text": "Quem tem o pior gosto musical segundo os demais?" },
-    { "number": 5, "text": "Quem é mais provável de mandar mensagem para o ex depois de algumas bebidas?" },
-    { "number": 6, "text": "Quem seria o pior parceiro para negócios?" },
-    { "number": 7, "text": "Quem contaria um segredo depois de jurar que não o faria?" },
-    { "number": 8, "text": "Quem é o mais provável de rir em momentos completamente inapropriados?" },
-    { "number": 9, "text": "Quem sobreviveria por menos tempo em uma ilha deserta?" },
-    { "number": 10, "text": "Quem é mais provável de perder o celular em uma festa?" },
-    { "number": 11, "text": "Quem é o mais provável de se perder mesmo usando GPS?" },
-    { "number": 12, "text": "Quem tem mais chance de chorar em filmes tristes?" },
-    { "number": 13, "text": "Quem é mais provável de esquecer um aniversário importante?" },
-    { "number": 14, "text": "Quem seria capaz de passar um mês sem internet por uma aposta?" },
-    { "number": 15, "text": "Quem é mais provável de comprar algo e se arrepender depois?" },
-    { "number": 16, "text": "Quem é mais provável de dar o presente mais estranho?" },
-    { "number": 17, "text": "Quem é mais provável de começar uma dieta e desistir em uma semana?" },
-    { "number": 18, "text": "Quem é mais provável de tentar uma nova tendência de moda falhada?" },
-    { "number": 19, "text": "Quem é mais provável de contar o final de um filme antes de você assistir?" },
-    { "number": 20, "text": "Quem é mais provável de dormir durante um filme?" },
-    { "number": 21, "text": "Quem é mais provável de rir em um funeral?" },
-    { "number": 22, "text": "Quem é mais provável de ter um talento oculto surpreendente?" },
-    { "number": 23, "text": "Quem é mais provável de passar horas escolhendo o que assistir na Netflix?" },
-    { "number": 24, "text": "Quem é mais provável de ser o primeiro a se perder em um festival?" },
-    { "number": 25, "text": "Quem é mais provável de sempre ter uma desculpa pronta?" },
-    { "number": 26, "text": "Quem é mais provável de passar o dia inteiro de pijama?" },
-    { "number": 27, "text": "Quem é mais provável de esquecer de pagar uma conta?" },
-    { "number": 28, "text": "Quem é mais provável de se tornar famoso por algo ridículo?" },
-    { "number": 29, "text": "Quem é mais provável de comprar uma casa mal-assombrada sem saber?" },
-    { "number": 30, "text": "Quem é mais provável de acreditar em teorias da conspiração?" },
-    { "number": 31, "text": "Quem é mais provável de ficar acordado até tarde fazendo nada produtivo?" },
-    { "number": 32, "text": "Quem é mais provável de ter um encontro desastroso?" },
-    { "number": 33, "text": "Quem é mais provável de se oferecer para cozinhar e acabar pedindo pizza?" },
-    { "number": 34, "text": "Quem é mais provável de esquecer de devolver algo que pegou emprestado?" },
-    { "number": 35, "text": "Quem é mais provável de ficar famoso subitamente?" },
-    { "number": 36, "text": "Quem é mais provável de se declarar em público?" },
-    { "number": 37, "text": "Quem é mais provável de gastar muito dinheiro em algo completamente inútil?" },
-    { "number": 38, "text": "Quem é mais provável de participar de um reality show?" },
-    { "number": 39, "text": "Quem é mais provável de criar uma história absurda para não sair de casa?" },
-    { "number": 40, "text": "Quem é mais provável de ser pego cantando no chuveiro?" },
-    { "number": 41, "text": "Quem é mais provável de perder a paciência rapidamente?" },
-    { "number": 42, "text": "Quem é mais provável de ser um espião disfarçado?" },
-    { "number": 43, "text": "Quem é mais provável de ter um animal exótico como pet?" },
-    { "number": 44, "text": "Quem é mais provável de fazer uma tatuagem e se arrepender?" },
-    { "number": 45, "text": "Quem é mais provável de se tornar um meme viral?" },
-    { "number": 46, "text": "Quem é mais provável de esquecer de usar filtro solar no verão?" },
-    { "number": 47, "text": "Quem é mais provável de falar durante um filme no cinema?" },
-    { "number": 48, "text": "Quem é mais provável de ter um guarda-roupa desorganizado?" },
-    { "number": 49, "text": "Quem é mais provável de se perder andando pela própria cidade?" },
-    { "number": 50, "text": "Quem é mais provável de se esquecer de alimentar o pet?" },
- { "number": 101, "text": "Quem é mais provável de se esquecer de alimentar o pet?" },
-    { "number": 102, "text": "Quem é mais provável de ter feito sexo em um local público?" },
-    { "number": 103, "text": "Quem é mais provável de experimentar uma nova droga em uma viagem?" },
-    { "number": 104, "text": "Quem é mais provável de ter um one-night stand numa viagem?" },
-    { "number": 105, "text": "Quem é mais provável de ter participado de uma festa swinger por curiosidade?" },
-    { "number": 106, "text": "Quem é mais provável de ter mandado nudes por engano para a pessoa errada?" },
-    { "number": 107, "text": "Quem é mais provável de ter uma história de sexo que terminou no hospital?" },
-    { "number": 108, "text": "Quem é mais provável de ter experimentado drogas recreativas em um festival de música?" },
-    { "number": 109, "text": "Quem é mais provável de ter uma tatuagem relacionada a uma experiência sexual?" },
-    { "number": 110, "text": "Quem é mais provável de ter se envolvido com alguém muito mais velho?" },
-    { "number": 111, "text": "Quem é mais provável de ter sido expulso de um bar por comportamento lascivo?" },
-    { "number": 112, "text": "Quem é mais provável de ter comprado algum brinquedo sexual em uma viagem?" },
-    { "number": 113, "text": "Quem é mais provável de ter feito um striptease sob influência de álcool ou drogas?" },
-    { "number": 114, "text": "Quem é mais provável de ter perdido a roupa interior em uma festa?" },
-    { "number": 115, "text": "Quem é mais provável de ter fingido um orgasmo para terminar logo?" },
-    { "number": 116, "text": "Quem é mais provável de ter participado de uma festa rave até o amanhecer?" },
-    { "number": 117, "text": "Quem é mais provável de ter enganado alguém sobre ser virgem?" },
-    { "number": 118, "text": "Quem é mais provável de ter usado uma desculpa esfarrapada para evitar sexo?" },
-    { "number": 119, "text": "Quem é mais provável de ter uma história de amor com alguém que conheceu online?" },
-    { "number": 120, "text": "Quem é mais provável de ter sido pego comprando produtos eróticos?" },
-    { "number": 121, "text": "Quem é mais provável de ter uma bad trip em público?" },
-    { "number": 122, "text": "Quem é mais provável de tentar convencer os amigos a experimentar uma nova droga?" },
-    { "number": 123, "text": "Quem é mais provável de ter experimentado a maior variedade de substâncias ilícitas?" },
-    { "number": 124, "text": "Quem é mais provável de ter tido uma viagem de ácido em um local totalmente inapropriado?" },
-    { "number": 125, "text": "Quem é mais provável de ter usado drogas antes de um evento importante para relaxar?" },
-    { "number": 126, "text": "Quem é mais provável de ter plantado sua própria cannabis?" },
-    { "number": 127, "text": "Quem é mais provável de ter sido pego pela polícia por posse de drogas?" },
-    { "number": 128, "text": "Quem é mais provável de ter confundido sal com cocaína?" },
-    { "number": 129, "text": "Quem é mais provável de ter ido a uma consulta médica pedir uma receita para maconha medicinal?" },
-    { "number": 130, "text": "Quem é mais provável de ter ido trabalhar ainda sob o efeito de drogas?" },
-    { "number": 131, "text": "Quem é mais provável de ter vendido algo importante para comprar drogas?" },
-    { "number": 132, "text": "Quem é mais provável de ter usado drogas pensando que era outra coisa?" },
-    { "number": 133, "text": "Quem é mais provável de ter se perdido durante uma viagem de drogas?" },
-    { "number": 134, "text": "Quem é mais provável de ter misturado álcool e drogas sem saber das consequências?" },
-    { "number": 135, "text": "Quem é mais provável de ter guardado drogas em lugares estranhos para esconder?" },
-    { "number": 136, "text": "Quem é mais provável de ter tido uma experiência de quase morte com drogas?" },
-    { "number": 137, "text": "Quem é mais provável de ter inventado uma história incrível sob o efeito de drogas?" },
-    { "number": 138, "text": "Quem é mais provável de ter feito arte sob influência de substâncias?" },
-    { "number": 139, "text": "Quem é mais provável de ter convencido alguém a parar de usar drogas?" },
-    { "number": 140, "text": "Quem é mais provável de ter sido salvo por amigos durante uma bad trip?" },
-    { "number": 141, "text": "Quem é mais provável de ter usado drogas em locais proibidos?" },
-    { "number": 142, "text": "Quem é mais provável de ser pego cantando no chuveiro?" },
-    { "number": 143, "text": "Quem é mais provável de perder a paciência rapidamente?" },
-    { "number": 144, "text": "Quem é mais provável de ser um espião disfarçado?" },
-    { "number": 145, "text": "Quem é mais provável de ter um animal exótico como pet?" },
-    { "number": 146, "text": "Quem é mais provável de fazer uma tatuagem e se arrepender?" },
-    { "number": 147, "text": "Quem é mais provável de se tornar um meme viral?" },
-    { "number": 148, "text": "Quem é mais provável de esquecer de usar filtro solar no verão?" },
-    { "number": 149, "text": "Quem é mais provável de falar durante um filme no cinema?" },
-    { "number": 150, "text": "Quem é mais provável de ter um guarda-roupa desorganizado?" }
-
+    { number: 1, text: "A vida é sobre criar impacto, não uma renda." },
+    { number: 2, text: "O que você faz hoje pode melhorar todos os seus amanhãs." },
+    { number: 3, text: "Você não tem que ser grande para começar, mas você tem que começar para ser grande." },
+    { number: 4, text: "As dificuldades preparam pessoas comuns para destinos extraordinários." },
+    { number: 5, text: "A motivação nos impulsiona a começar e o hábito nos permite continuar." }
   ];
 
   function newPhrase() {
-    const numberElement = document.querySelector('.number');
-    const textElement = document.querySelector('.text');
-    const randomIndex = Math.floor(Math.random() * phrases.length);
-    numberElement.textContent = phrases[randomIndex].number;
-    textElement.textContent = phrases[randomIndex].text;
+    const card = document.querySelector('.card');
+    card.classList.add('is-flipped');
+    setTimeout(() => {
+      const numberElement = document.querySelector('.number');
+      const textElement = document.querySelector('.text');
+      const randomIndex = Math.floor(Math.random() * phrases.length);
+      numberElement.textContent = phrases[randomIndex].number;
+      textElement.textContent = phrases[randomIndex].text;
+      card.classList.remove('is-flipped');
+    }, 600); // Wait for animation to complete before changing the content
   }
 </script>
 </body>
