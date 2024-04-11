@@ -74,8 +74,389 @@
 
 <script>
 const questions = [
-    { question: "Qual é o melhor filme de 2020?", answers: ["Filme 1", "Filme 2", "Filme 3", "Filme 4", "Filme 5", "Filme 6", "Filme 7", "Filme 8"] },
-    { question: "Qual é a melhor série de 2021?", answers: ["Série 1", "Série 2", "Série 3", "Série 4", "Série 5", "Série 6", "Série 7", "Série 8"] },
+    { 
+        "question": "Quais as frutas mais consumidas no Brasil?", 
+        "answers": ["Laranja", "Banana", "Maçã", "Mamão", "Abacaxi", "Manga", "Uva", "Melancia"] 
+    },
+    { 
+        "question": "Quais as cidades brasileiras mais populosas?", 
+        "answers": ["São Paulo", "Rio de Janeiro", "Brasília", "Salvador", "Fortaleza", "Belo Horizonte", "Manaus", "Curitiba"] 
+    },
+    { 
+        "question": "Quais contas do Instagram têm maior número de seguidores?", 
+        "answers": ["Cristiano Ronaldo", "Ariana Grande", "Dwayne Johnson", "Selena Gomez", "Kylie Jenner", "Lionel Messi", "Beyoncé", "Kim Kardashian"] 
+    },
+    { 
+        "question": "Quais são os influencers com maior número de seguidores no Brasil?", 
+        "answers": ["Whindersson Nunes", "Anitta", "Neymar Jr", "Camila Coelho", "Felipe Neto", "Tatá Werneck", "Giovanna Ewbank", "Julio Cocielo"] 
+    },
+    { 
+        "question": "Quem são os cantores mais bem pagos do mundo?", 
+        "answers": ["Taylor Swift", "Beyoncé", "Drake", "Jay-Z", "Rihanna", "Kanye West", "Billie Eilish", "Justin Bieber"] 
+    },
+    { 
+        "question": "Quais filmes mais faturaram em Hollywood?", 
+        "answers": ["Avatar", "Avengers: Endgame", "Titanic", "Star Wars: The Force Awakens", "Avengers: Infinity War", "Jurassic World", "The Lion King", "The Avengers"] 
+    },
+    { 
+        "question": "Quais são as raças de cães mais populares no mundo?", 
+        "answers": ["Labrador Retriever", "German Shepherd", "Golden Retriever", "French Bulldog", "Bulldog", "Poodle", "Beagle", "Rottweiler"] 
+    },
+    { 
+        "question": "Quais são os livros mais vendidos de todos os tempos?", 
+        "answers": ["Don Quixote", "A Tale of Two Cities", "The Lord of the Rings", "The Little Prince", "Harry Potter and the Sorcerer's Stone", "The Hobbit", "And Then There Were None", "Dream of the Red Chamber"] 
+    },
+    { 
+        "question": "Quais são os principais exportadores de café do mundo?", 
+        "answers": ["Brasil", "Vietnã", "Colômbia", "Indonésia", "Etiópia", "Honduras", "Índia", "Uganda"] 
+    },
+    { 
+        "question": "Quais são os carros mais vendidos na Europa?", 
+        "answers": ["Volkswagen Golf", "Renault Clio", "Volkswagen Polo", "Ford Fiesta", "Peugeot 208", "Toyota Yaris", "Opel Corsa", "Dacia Sandero"] 
+    },    { 
+        "question": "Quais são os principais pratos típicos do Brasil?", 
+        "answers": ["Feijoada", "Moqueca", "Churrasco", "Acarajé", "Pão de queijo", "Coxinha", "Pastel", "Bobó de camarão"] 
+    },
+    { 
+        "question": "Quais são as maiores economias do mundo?", 
+        "answers": ["Estados Unidos", "China", "Japão", "Alemanha", "Índia", "Reino Unido", "França", "Itália"] 
+    },
+    { 
+        "question": "Quais são os tipos de café mais populares?", 
+        "answers": ["Espresso", "Cappuccino", "Americano", "Latte", "Mocha", "Macchiato", "Flat White", "Ristretto"] 
+    },
+    { 
+        "question": "Quais são os maiores desertos do mundo?", 
+        "answers": ["Saara", "Antártida", "Ártico", "Gobi", "Kalahari", "Sonora", "Atacama", "Simpson"] 
+    },
+    { 
+        "question": "Quais são as maiores ilhas do mundo?", 
+        "answers": ["Groenlândia", "Nova Guiné", "Bornéu", "Madagáscar", "Baffin", "Sumatra", "Honshu", "Grã-Bretanha"] 
+    },
+    { 
+        "question": "Quais são os idiomas mais falados no mundo?", 
+        "answers": ["Inglês", "Mandarim", "Hindi", "Espanhol", "Francês", "Árabe", "Bengali", "Russo"] 
+    },
+    { 
+        "question": "Quais são os maiores festivais de música do mundo?", 
+        "answers": ["Coachella", "Glastonbury", "Tomorrowland", "Lollapalooza", "Burning Man", "Rock in Rio", "Ultra Music", "Electric Daisy Carnival"] 
+    },
+    { 
+        "question": "Quais são as capitais europeias mais visitadas?", 
+        "answers": ["Paris", "Londres", "Roma", "Amsterdã", "Praga", "Berlim", "Viena", "Madrid"] 
+    },
+    { 
+        "question": "Quem são os maiores pintores da história?", 
+        "answers": ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Claude Monet", "Rembrandt", "Michelangelo", "Salvador Dalí", "Jackson Pollock"] 
+    },
+    { 
+        "question": "Quais são os esportes mais praticados no Brasil?", 
+        "answers": ["Futebol", "Vôlei", "Basquete", "Natação", "Jiu-Jitsu", "Capoeira", "Tênis", "Atletismo"] 
+    },
+    { 
+        "question": "Quais são os smartphones mais vendidos em 2023?", 
+        "answers": ["iPhone 13", "Samsung Galaxy S21", "Xiaomi Redmi Note 10", "OnePlus 9", "Google Pixel 6", "Huawei P50 Pro", "Oppo Find X3", "Realme 8 Pro"] 
+    },
+    { 
+        "question": "Quais são os países com maior diversidade biológica?", 
+        "answers": ["Brasil", "Colômbia", "Indonésia", "China", "México", "Peru", "Austrália", "Índia"] 
+    },
+    { 
+        "question": "Quais são os principais prêmios Nobel da Literatura?", 
+        "answers": ["Gabriel García Márquez", "William Faulkner", "Toni Morrison", "Ernest Hemingway", "Bob Dylan", "Alice Munro", "Kazuo Ishiguro", "Olga Tokarczuk"] 
+    },
+    { 
+        "question": "Quais são os jogos de tabuleiro mais populares?", 
+        "answers": ["Xadrez", "Monopólio", "Catan", "Scrabble", "Carcassonne", "Risk", "Banco Imobiliário", "Tabu"] 
+    },
+    { 
+        "question": "Quais são os principais tipos de vinhos franceses?", 
+        "answers": ["Bordeaux", "Champagne", "Bourgogne", "Côtes du Rhône", "Alsace", "Loire", "Beaujolais", "Provence"] 
+    },
+    { 
+        "question": "Quais são as maiores cidades dos Estados Unidos?", 
+        "answers": ["Nova Iorque", "Los Angeles", "Chicago", "Houston", "Phoenix", "Filadélfia", "San Antonio", "San Diego"] 
+    },
+    { 
+        "question": "Quais são os principais tipos de queijo italiano?", 
+        "answers": ["Mozzarella", "Parmigiano Reggiano", "Ricotta", "Gorgonzola", "Pecorino Romano", "Asiago", "Taleggio", "Provolone"] 
+    },
+    { 
+        "question": "Quais são os planetas do sistema solar?", 
+        "answers": ["Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno"] 
+    },
+    { 
+        "question": "Quais são as principais ferramentas de marketing digital?", 
+        "answers": ["Google Analytics", "Hootsuite", "Mailchimp", "HubSpot", "SEMrush", "Moz", "Yoast SEO", "Canva"] 
+    },
+    { 
+        "question": "Quais são os maiores lagos do mundo?", 
+        "answers": ["Mar Cáspio", "Lago Superior", "Lago Victoria", "Lago Huron", "Lago Michigan", "Lago Tanganica", "Lago Baikal", "Grande Lago do Urso"] 
+    },
+    { 
+        "question": "Quais são as principais correntes filosóficas?", 
+        "answers": ["Empirismo", "Racionalismo", "Existencialismo", "Utilitarismo", "Fenomenologia", "Pragmatismo", "Hedonismo", "Stoicism"] 
+    },
+    { 
+        "question": "Quais são os principais tipos de chá?", 
+        "answers": ["Chá verde", "Chá preto", "Chá oolong", "Chá branco", "Chá de ervas", "Chá mate", "Chá de rooibos", "Chá de hibisco"] 
+    },
+    { 
+        "question": "Quais são os maiores rios da América do Sul?", 
+        "answers": ["Amazonas", "Paraná", "Orinoco", "São Francisco", "Madeira", "Purus", "Tocantins", "Uruguai"] 
+    },
+    { 
+        "question": "Quais são os principais museus de arte da Europa?", 
+        "answers": ["Louvre", "Museu do Prado", "Tate Modern", "Vaticano", "Rijksmuseum", "Uffizi", "Hermitage", "Pompidou"] 
+    },
+    { 
+        "question": "Quais são os principais estilos de dança?", 
+        "answers": ["Ballet", "Jazz", "Hip Hop", "Contemporâneo", "Salsa", "Flamenco", "Tango", "Breakdance"] 
+    },
+    { 
+        "question": "Quais são os melhores destinos de viagem na Ásia?", 
+        "answers": ["Bali", "Bangkok", "Tóquio", "Nova Delhi", "Xangai", "Seul", "Singapura", "Kyoto"] 
+    },
+    { 
+        "question": "Quais são os estilos de música mais populares no mundo?", 
+        "answers": ["Rock", "Pop", "Hip-Hop", "Jazz", "Blues", "Eletrônica", "Reggae", "Country"] 
+    },
+    { 
+        "question": "Quais são os filmes de animação mais amados?", 
+        "answers": ["Toy Story", "O Rei Leão", "Frozen", "Procurando Nemo", "Shrek", "Aladdin", "Coco", "Up"] 
+    },
+    { 
+        "question": "Quais são os idiomas mais difíceis de aprender?", 
+        "answers": ["Mandarim", "Árabe", "Japonês", "Coreano", "Russo", "Húngaro", "Finlandês", "Vietnamita"] 
+    },
+    { 
+        "question": "Quais são os melhores parques temáticos no Brasil?", 
+        "answers": ["Beto Carrero World", "Beach Park", "Hopi Hari", "Parque da Mônica", "Mirabilandia", "Wet'n Wild São Paulo", "Magic City", "Hot Park"] 
+    },
+    { 
+        "question": "Quais são os livros mais influentes sobre economia?", 
+        "answers": ["O Capital", "A Riqueza das Nações", "Freakonomics", "The Big Short", "Capital no Século XXI", "The Wealth of Nations", "Economics in One Lesson", "Poor Economics"] 
+    },
+    { 
+        "question": "Quais são as montanhas mais altas do mundo?", 
+        "answers": ["Monte Everest", "K2", "Kangchenjunga", "Lhotse", "Makalu", "Cho Oyu", "Dhaulagiri", "Manaslu"] 
+    },
+    { 
+        "question": "Quais são as maiores invenções da história?", 
+        "answers": ["A roda", "A imprensa", "A lâmpada elétrica", "O telefone", "O automóvel", "O computador", "A internet", "O avião"] 
+    },
+    { 
+        "question": "Quais são as cervejas mais populares na Alemanha?", 
+        "answers": ["Paulaner", "Weihenstephaner", "Beck's", "Warsteiner", "St. Pauli Girl", "Radeberger", "Krombacher", "Bitburger"] 
+    },
+    { 
+        "question": "Quais são os principais prêmios da música?", 
+        "answers": ["Grammy", "Billboard Music Awards", "MTV Video Music Awards", "American Music Awards", "BRIT Awards", "CMA Awards", "Eurovision", "Juno Awards"] 
+    },
+    { 
+        "question": "Quais são as maiores empresas de tecnologia do mundo?", 
+        "answers": ["Apple", "Microsoft", "Amazon", "Google", "Facebook", "Alibaba", "Tencent", "Samsung"] 
+    },
+    { 
+        "question": "Quais são os principais tipos de sushi?", 
+        "answers": ["Nigiri", "Sashimi", "Maki", "Uramaki", "Temaki", "Chirashi", "Inari", "Oshizushi"] 
+    },
+    { 
+        "question": "Quais são os maiores campeonatos de futebol do mundo?", 
+        "answers": ["Copa do Mundo", "UEFA Champions League", "Copa Libertadores", "Premier League", "La Liga", "Bundesliga", "Serie A", "Ligue 1"] 
+    },
+    { 
+        "question": "Quais são os maiores aquários do Brasil?", 
+        "answers": ["Aquário de São Paulo", "AquaRio", "Aquário de Ubatuba", "Oceanic Aquarium", "Aquário Natal", "Aquário de Paranaguá", "Aquário da Paraíba", "Aquário de Santos"] 
+    },
+    { 
+        "question": "Quais são as principais competições de natação?", 
+        "answers": ["Jogos Olímpicos", "Campeonato Mundial de Natação", "Campeonato Europeu de Natação", "Pan Pacific Swimming Championships", "Commonwealth Games", "Jogos Pan-Americanos", "NCAA Swimming & Diving Championships", "FINA World Cup"] 
+    },
+    { 
+        "question": "Quais são os principais filósofos da história?", 
+        "answers": ["Platão", "Aristóteles", "Sócrates", "Descartes", "Kant", "Nietzsche", "Confúcio", "Lao-Tzu"] 
+    },
+    { 
+        "question": "Quais são os principais elementos químicos industriais?", 
+        "answers": ["Oxigênio", "Carbono", "Hidrogênio", "Nitrogênio", "Ferro", "Alumínio", "Cobre", "Zinco"] 
+    },
+    { 
+        "question": "Quais são as maiores cidades da China?", 
+        "answers": ["Xangai", "Pequim", "Chongqing", "Tianjin", "Guangzhou", "Shenzhen", "Chengdu", "Nanjing"] 
+    },
+    { 
+        "question": "Quais são os pratos típicos da culinária italiana?", 
+        "answers": ["Pizza", "Lasanha", "Spaghetti Carbonara", "Risotto", "Gnocchi", "Tiramisu", "Panzanella", "Ossobuco"] 
+    },
+    { 
+        "question": "Quais são os maiores parques nacionais dos Estados Unidos?", 
+        "answers": ["Yellowstone", "Yosemite", "Grand Canyon", "Rocky Mountain", "Zion", "Great Smoky Mountains", "Acadia", "Olympic"] 
+    },
+    { 
+        "question": "Quais são os principais instrumentos de uma orquestra?", 
+        "answers": ["Violino", "Viola", "Violoncelo", "Contrabaixo", "Flauta", "Oboé", "Clarinete", "Trompete"] 
+    },
+    { 
+        "question": "Quais são as principais fontes de energia renovável?", 
+        "answers": ["Energia solar", "Energia eólica", "Energia hidrelétrica", "Biomassa", "Geotérmica", "Energia das marés", "Energia das ondas", "Energia hidrocinética"] 
+    },
+    { 
+        "question": "Quais são os maiores festivais de teatro do mundo?", 
+        "answers": ["Festival de Avignon", "Edinburgh Festival Fringe", "Festival Internacional de Teatro de Bogotá", "Festival de Teatro de Curitiba", "Oregon Shakespeare Festival", "Festival de Teatro de Mérida", "Adelaide Festival", "Festival Internacional Cervantino"] 
+    },
+    { 
+        "question": "Quais são os principais tipos de cerveja?", 
+        "answers": ["Lager", "Ale", "Stout", "Porter", "Pilsner", "Wheat Beer", "Sour Beer", "IPA"] 
+    },
+    { 
+        "question": "Quais são os maiores festivais de filme na América Latina?", 
+        "answers": ["Festival Internacional de Cine de Mar del Plata", "Festival do Rio", "Festival de Cinema de Gramado", "Festival Internacional de Cine en Guadalajara", "Festival de Cine de Cartagena", "Festival Internacional de Cine de Morelia", "Festival Internacional de Cine de São Paulo", "Festival de Cine de Lima"] 
+    },
+    { 
+        "question": "Quais são os melhores locais para mergulho no mundo?", 
+        "answers": ["Grande Barreira de Coral", "Blue Hole", "Thistlegorm", "Ilhas Similan", "Cozumel", "Galápagos", "Maldivas", "Palau"] 
+    },
+    { 
+        "question": "Quais são os maiores clássicos da literatura mundial?", 
+        "answers": ["Dom Quixote", "Guerra e Paz", "Moby Dick", "O Grande Gatsby", "1984", "Ulisses", "A Divina Comédia", "Hamlet"] 
+    },
+    { 
+        "question": "Quais são os melhores hotéis de luxo do mundo?", 
+        "answers": ["Burj Al Arab", "The Plaza", "Ritz Paris", "Waldorf Astoria", "Marina Bay Sands", "The Peninsula", "Mandarin Oriental", "Four Seasons"] 
+    },
+    { 
+        "question": "Quais são os maiores zoos do mundo?", 
+        "answers": ["San Diego Zoo", "Beijing Zoo", "Schönbrunn Zoo", "Moscow Zoo", "Bronx Zoo", "London Zoo", "Singapore Zoo", "Toronto Zoo"] 
+    },
+    { 
+        "question": "Quais são os principais tipos de artes marciais?", 
+        "answers": ["Karate", "Judo", "Taekwondo", "Aikido", "Kung Fu", "Muay Thai", "Brazilian Jiu-jitsu", "Krav Maga"] 
+    },
+    { 
+        "question": "Quais são os principais destinos de esqui no mundo?", 
+        "answers": ["Chamonix", "Zermatt", "Aspen", "Whistler", "Vail", "Kitzbühel", "Cortina d'Ampezzo", "St. Moritz"] 
+    },
+    { 
+        "question": "Quais são os principais festivais de jazz do mundo?", 
+        "answers": ["Montreux Jazz Festival", "Newport Jazz Festival", "North Sea Jazz Festival", "Montreal International Jazz Festival", "Copenhagen Jazz Festival", "Nice Jazz Festival", "Chicago Jazz Festival", "Jazz in Marciac"] 
+    },
+    { 
+        "question": "Quais são os principais tipos de pizza?", 
+        "answers": ["Margherita", "Pepperoni", "Quatro Queijos", "Havaiana", "Frango com Catupiry", "Calabresa", "Napolitana", "Siciliana"] 
+    },
+    { 
+        "question": "Quais são os maiores produtores de vinho no mundo?", 
+        "answers": ["Itália", "França", "Espanha", "Estados Unidos", "Argentina", "China", "Austrália", "África do Sul"] 
+    },
+    { 
+        "question": "Quais são os melhores restaurantes do mundo?", 
+        "answers": ["Noma", "El Celler de Can Roca", "Osteria Francescana", "Mirazur", "Eleven Madison Park", "Gaggan", "Mugaritz", "Arpège"] 
+    },
+    { 
+        "question": "Quais são os principais tipos de café da manhã ao redor do mundo?", 
+        "answers": ["Café da manhã americano", "English breakfast", "Café da manhã japonês", "Petit déjeuner francês", "Desayuno mexicano", "Frühstück alemão", "Colazione italiana", "Café da manhã brasileiro"] 
+    },
+    { 
+        "question": "Quais são os maiores hits de pop de 2023?", 
+        "answers": ["As It Was - Harry Styles", "About Damn Time - Lizzo", "Easy On Me - Adele", "Stay - The Kid LAROI & Justin Bieber", "INDUSTRY BABY - Lil Nas X & Jack Harlow", "Good 4 U - Olivia Rodrigo", "Levitating - Dua Lipa", "Montero - Lil Nas X"] 
+    },
+    { 
+        "question": "Quem são os atores mais populares de Hollywood em 2023?", 
+        "answers": ["Tom Holland", "Zendaya", "Chris Hemsworth", "Scarlett Johansson", "Margot Robbie", "Leonardo DiCaprio", "Jennifer Lawrence", "Dwayne Johnson"] 
+    },
+    { 
+        "question": "Quais são as séries de TV mais discutidas em 2023?", 
+        "answers": ["Stranger Things", "Game of Thrones: House of the Dragon", "The Mandalorian", "Bridgerton", "The Witcher", "Succession", "Ted Lasso", "Euphoria"] 
+    },
+    { 
+        "question": "Quais são os livros mais vendidos de ficção científica de 2023?", 
+        "answers": ["Project Hail Mary - Andy Weir", "Klara and the Sun - Kazuo Ishiguro", "Leviathan Falls - James S.A. Corey", "The Ministry for the Future - Kim Stanley Robinson", "A Desolation Called Peace - Arkady Martine", "The Last Graduate - Naomi Novik", "Termination Shock - Neal Stephenson", "Fugitive Telemetry - Martha Wells"] 
+    },
+    { 
+        "question": "Quais filmes ganharam o Oscar de Melhor Filme na última década?", 
+        "answers": ["CODA", "Nomadland", "Parasite", "Green Book", "The Shape of Water", "Moonlight", "Spotlight", "Birdman"] 
+    },
+    { 
+        "question": "Quem são os Youtubers mais famosos de 2023?", 
+        "answers": ["MrBeast", "PewDiePie", "Like Nastya", "Dude Perfect", "Markiplier", "Rhett & Link", "David Dobrik", "Jeffree Star"] 
+    },
+    { 
+        "question": "Quais são os artistas de música mais premiados no Grammy 2023?", 
+        "answers": ["Beyoncé", "Adele", "Billie Eilish", "Harry Styles", "Taylor Swift", "The Weeknd", "Bruno Mars", "Lady Gaga"] 
+    },
+    { 
+        "question": "Quais são os videogames mais vendidos de todos os tempos?", 
+        "answers": ["Minecraft", "Grand Theft Auto V", "Tetris", "Wii Sports", "PlayerUnknown's Battlegrounds", "Super Mario Bros.", "Pokémon Red/Blue", "Mario Kart 8"] 
+    },
+    { 
+        "question": "Quem são os designers de moda mais influentes de 2023?", 
+        "answers": ["Virgil Abloh", "Marc Jacobs", "Miuccia Prada", "Karl Lagerfeld", "Stella McCartney", "Riccardo Tisci", "Donatella Versace", "Ralph Lauren"] 
+    },
+    { 
+        "question": "Quais são os maiores eventos de moda em 2023?", 
+        "answers": ["New York Fashion Week", "Paris Fashion Week", "Milan Fashion Week", "London Fashion Week", "Tokyo Fashion Week", "São Paulo Fashion Week", "Berlin Fashion Week", "Shanghai Fashion Week"] 
+    },
+    { 
+        "question": "Quais são os melhores festivais de música do Brasil?", 
+        "answers": ["Rock in Rio", "Lollapalooza", "Tomorrowland Brasil", "Festival de Verão Salvador", "VillaMix", "Planeta Brasil", "João Rock", "São Paulo Trip"] 
+    },
+    { 
+        "question": "Quais são os filmes de super-heróis mais rentáveis?", 
+        "answers": ["Avengers: Endgame", "Avengers: Infinity War", "The Avengers", "Avengers: Age of Ultron", "Black Panther", "Iron Man 3", "Captain America: Civil War", "Spider-Man: No Way Home"] 
+    },
+    { 
+        "question": "Quem são os atores mais bem pagos do mundo em 2023?", 
+        "answers": ["Dwayne Johnson", "Ryan Reynolds", "Mark Wahlberg", "Ben Affleck", "Vin Diesel", "Akshay Kumar", "Lin-Manuel Miranda", "Will Smith"] 
+    },
+    { 
+        "question": "Quais são as bandas de rock mais famosas atualmente?", 
+        "answers": ["The Foo Fighters", "Imagine Dragons", "Coldplay", "U2", "Radiohead", "Metallica", "Red Hot Chili Peppers", "Green Day"] 
+    },
+    { 
+        "question": "Quais são as melhores séries de comédia de todos os tempos?", 
+        "answers": ["Friends", "The Office", "Parks and Recreation", "Brooklyn Nine-Nine", "Arrested Development", "Seinfeld", "The Simpsons", "30 Rock"] 
+    },
+    { 
+        "question": "Quais são os melhores álbuns de hip-hop de 2023?", 
+        "answers": ["Certified Lover Boy - Drake", "Donda - Kanye West", "The Off-Season - J. Cole", "An Evening with Silk Sonic - Silk Sonic", "Call Me If You Get Lost - Tyler, The Creator", "King's Disease II - Nas", "Happier Than Ever - Billie Eilish", "We're All Alone in This Together - Dave"] 
+    },
+    { 
+        "question": "Quais celebridades têm as melhores linhas de cosméticos?", 
+        "answers": ["Rihanna (Fenty Beauty)", "Kylie Jenner (Kylie Cosmetics)", "Lady Gaga (Haus Laboratories)", "Selena Gomez (Rare Beauty)", "Kim Kardashian (KKW Beauty)", "Gwyneth Paltrow (Goop)", "Jessica Alba (Honest Beauty)", "Drew Barrymore (Flower Beauty)"] 
+    },
+    { 
+        "question": "Quais são os programas de TV mais premiados?", 
+        "answers": ["Game of Thrones", "The Crown", "The West Wing", "Mad Men", "Breaking Bad", "The Handmaid's Tale", "Schitt's Creek", "The Marvelous Mrs. Maisel"] 
+    },
+    { 
+        "question": "Quais são os melhores locais para festivais de cinema?", 
+        "answers": ["Cannes (França)", "Venice (Itália)", "Berlin (Alemanha)", "Toronto (Canadá)", "Sundance (EUA)", "Tribeca (EUA)", "SXSW (EUA)", "Rotterdam (Holanda)"] 
+    },
+    { 
+        "question": "Quais são os maiores influenciadores digitais do Brasil?", 
+        "answers": ["Whindersson Nunes", "Felipe Neto", "Carlinhos Maia", "Anitta", "Luisa Sonza", "Tatá Werneck", "Flavia Pavanelli", "Viih Tube"] 
+    },
+    { 
+        "question": "Quais são as séries de fantasia mais populares?", 
+        "answers": ["Game of Thrones", "The Witcher", "His Dark Materials", "Shadow and Bone", "The Wheel of Time", "Outlander", "American Gods", "The Magicians"] 
+    },
+    { 
+        "question": "Quais são os artistas mais ouvidos no Spotify em 2023?", 
+        "answers": ["Bad Bunny", "Taylor Swift", "Drake", "Ariana Grande", "Ed Sheeran", "The Weeknd", "Billie Eilish", "Dua Lipa"] 
+    },
+    { 
+        "question": "Quais são os melhores filmes de terror dos últimos 10 anos?", 
+        "answers": ["Get Out", "A Quiet Place", "Hereditary", "It", "The Conjuring", "Midsommar", "The Witch", "Us"] 
+    },
+    { 
+        "question": "Quais são os programas de reality TV mais populares?", 
+        "answers": ["Survivor", "Big Brother", "The Bachelor", "RuPaul's Drag Race", "The Real Housewives", "MasterChef", "Love Island", "The Voice"] 
+    },
+    { 
+        "question": "Quais são as melhores plataformas de streaming?", 
+        "answers": ["Netflix", "Amazon Prime Video", "Hulu", "Disney+", "HBO Max", "Apple TV+", "Peacock", "Paramount+"] 
+    },
     // Adicione até 500 perguntas neste formato
 ];
 
