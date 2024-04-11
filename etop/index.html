@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>É Top!?</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        user-select: none; /* Desabilita a seleção de texto */
+    }
+    header {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 24px;
+    }
+    .card {
+        margin: 20px auto;
+        padding: 20px;
+        width: 90%;
+        max-width: 600px;
+        background-color: #F3F3F3;
+        border: 2px solid #707070;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .question {
+        background-color: #E0E0E0;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    .answers {
+        background-color: white;
+        padding: 10px;
+    }
+    .answer {
+        margin: 5px 0;
+        padding: 10px;
+        background-color: #FFF;
+        border: 1px solid #DDD;
+    }
+    button {
+        display: block;
+        width: 200px;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #FFF;
+        background-color: #007BFF;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<header>É Top!?</header>
+<div class="card">
+    <div class="question">Clique em "Nova Carta" para começar!</div>
+    <div class="answers">
+        <div class="answer">...</div>
+        <div class="answer">...</div>
+        <div class="answer">...</div>
+        <div class="answer">...</div>
+        <div class="answer">...</div>
+        <div class="answer">...</div>
+        <div class="answer">...</div>
+        <div class="answer">...</div>
+    </div>
+</div>
+<button onclick="newCard()">Nova Carta</button>
+
+<script>
+const questions = [
+    { question: "Qual é o melhor filme de 2020?", answers: ["Filme 1", "Filme 2", "Filme 3", "Filme 4", "Filme 5", "Filme 6", "Filme 7", "Filme 8"] },
+    { question: "Qual é a melhor série de 2021?", answers: ["Série 1", "Série 2", "Série 3", "Série 4", "Série 5", "Série 6", "Série 7", "Série 8"] },
+    // Adicione até 500 perguntas neste formato
+];
+
+function newCard() {
+    const cardIndex = Math.floor(Math.random() * questions.length);
+    const selectedQuestion = questions[cardIndex];
+    
+    const questionElement = document.querySelector('.question');
+    const answerElements = document.querySelectorAll('.answer');
+    
+    questionElement.textContent = selectedQuestion.question;
+    selectedQuestion.answers.forEach((answer, index) => {
+        answerElements[index].textContent = answer;
+    });
+}
+</script>
+</body>
+</html>
